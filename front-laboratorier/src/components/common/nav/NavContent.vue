@@ -1,0 +1,139 @@
+<template>
+  <div :class="setDir" id="navContent">
+
+    <div :class="itemStyle" v-if="zoomStatus"><slot></slot></div>
+
+    <div class="zoom" v-if="zommShow">
+      <div  
+        class="zoom-btn"
+        :status="zoomStatus"
+        @click="isShow()"
+      >
+        <i v-if="zoomStatus"><img src="~assets/image/left.svg" alt=""></i>
+        <i v-if="!zoomStatus"><img src="~assets/image/right.svg" alt=""></i>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    props:{
+      styleNav:{
+        type:String,
+        default:"col"
+      }
+    },
+    data(){
+      return{
+        zoomStatus: true,
+        setDir:null,
+        itemStyle:null,
+        zommShow:true,
+        isHide:null,
+      }
+    },
+    methods:{
+      isShow(){
+
+        if(this.zoomStatus){
+          document.querySelector("#navContent").style.width = "15px"
+        }else{
+          document.querySelector("#navContent").style.width = "215px"
+        }
+        this.zoomStatus = !this.zoomStatus;
+        
+      }
+    },
+    created(){
+      if(this.styleNav ==="col" ){
+        this.setDir = "nav-content-col";
+        this.itemStyle = "nav-item-col"
+      }else if(this.styleNav ==="row"){
+        this.setDir = "nav-content-row";
+        this.itemStyle = "nav-item-row";
+        this.zommShow = false;
+      }
+
+      
+    }
+  }
+</script>
+
+<style scoped>
+
+.nav-content-col {
+
+  width: 215px;
+  cursor: pointer;
+  display: flex;
+
+}
+
+
+.nav-item-col{
+  width: 215px;
+  padding: 15px 40px;
+
+  box-sizing: border-box; 
+}
+.nav-item-col>div{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    
+    /* margin-left: 10px; */
+}
+
+
+
+.nav-content-row {
+  height: 80px;
+  width: 100%;
+  border-bottom: 2px solid rgb(217, 236, 255);
+  cursor: pointer;
+  
+}
+
+.nav-item-row{
+  width: 100%;
+   /* padding-top: 15px; */
+   display: flex;
+}
+
+.nav-item-row>div{
+  flex: 1;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    z-index: 1
+}
+
+
+
+.zoom {
+  width: 15px;
+  height: 900px;
+  background: rgb(217, 236, 255);
+}
+.zoom-btn {
+  height: 70px;
+  margin-top: 250px;
+  cursor: pointer;
+  background: rgb(198, 226, 255);
+}
+i {
+  position: relative;
+  top: 40%;
+}
+
+
+
+
+
+
+
+</style>
