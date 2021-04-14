@@ -9,6 +9,9 @@ const Materials = () => import('views/materials/Materials')
 const Seat = () => import('views/seat/Seat')
 const UserInfo = () => import('views/userinfo/UserInfo')
 
+const Labf608 =()=> import('views/seat/childComps/Lab608')
+const Labf609 =()=> import('views/seat/childComps/Lab609')
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -34,7 +37,13 @@ const routes = [
   },
   {
     path: '/seat',
-    component:Seat
+    component:Seat,
+    children:[
+      {
+        path: 'f609',
+        component:
+      }
+    ]
   },
   {
     path: '/userinfo',
