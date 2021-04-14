@@ -8,7 +8,6 @@
         <div v-for="(value, name, index) in item" :key="index">
           <p v-if="value.split('.')[2]!='svg'">{{ value }}</p> 
           <img v-else :src="value">
-          <!-- {{ value }} -->
         </div>
       </li>
     </ul>
@@ -26,7 +25,7 @@ export default {
 
 <style scoped>
 .list-content {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .list-content li:first-child {
@@ -35,22 +34,27 @@ export default {
 
 li {
   display: flex;
-  justify-content: start;
-  padding: 10px 0px;
+  /* margin-top: 10px; */
+  height: 40px;
 }
 .list-item {
   border-bottom: 1px solid rgb(217, 236, 255);
 }
 li div {
   width: 100%;
-  margin-right: 10%;
+  margin-right: 40px;
   text-align: center;
 }
-p{
-  line-height: 50px;
+.list-item p{
+  line-height: 40px;
 }
 
-img {
-width: 50px;
+.list-item img {
+    display: block;
+    margin-top: 2px;
+    margin-left: 42%;
+    width: 35px;
+    border: 1px solid rgb(217, 236, 255);
+    border-radius: 50%;
 }
 </style>
