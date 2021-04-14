@@ -9,8 +9,8 @@ const Materials = () => import('views/materials/Materials')
 const Seat = () => import('views/seat/Seat')
 const UserInfo = () => import('views/userinfo/UserInfo')
 
-const Labf608 =()=> import('views/seat/childComps/Lab608')
-const Labf609 =()=> import('views/seat/childComps/Lab609')
+const Labf608 =()=> import('views/seat/childComps/seatContent/childComps/seatTab/Labf608')
+const Labf609 =()=> import('views/seat/childComps/seatContent/childComps/seatTab/Labf609')
 
 Vue.use(VueRouter)
 
@@ -40,9 +40,17 @@ const routes = [
     component:Seat,
     children:[
       {
+        path:'',
+        redirect: 'f609'
+      },
+      {
         path: 'f609',
-        component:
-      }
+        component:Labf609
+      },
+      {
+        path: 'f608',
+        component:Labf608
+      },
     ]
   },
   {

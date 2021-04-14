@@ -77,21 +77,21 @@
 
   box-sizing: border-box; 
 }
-.nav-item-col>div{
+/* .nav-item-col>div{
     flex: 1;
     display: flex;
     align-items: center;
     width: 100%;
     height: 80px;
     
-    /* margin-left: 10px; */
-}
+
+} */
 
 
 
 .nav-content-row {
-  height: 80px;
-  width: 100%;
+  height: 60px;
+  /* width: 100%; */
   border-bottom: 2px solid rgb(217, 236, 255);
   cursor: pointer;
   
@@ -107,8 +107,8 @@
   flex: 1;
     display: flex;
     align-items: center;
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    /* width: 50px; */
     z-index: 1
 }
 

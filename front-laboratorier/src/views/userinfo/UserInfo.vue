@@ -33,6 +33,7 @@ export default {
           class: "软件工程1902",
           id: "201903140100",
           laboraid: "F609",
+          seatId: "1"
         },
         {
           logo:  require("../../assets/image/userLogo/宫崎骏 (2).svg"),
@@ -40,6 +41,7 @@ export default {
           class: "软件工程1901",
           id: "201903140101",
           laboraid: "F608",
+          seatId: "2"
         },
         {
           logo:  require("../../assets/image/userLogo/宫崎骏 (3).svg"),
@@ -47,6 +49,7 @@ export default {
           class: "软件工程1901",
           id: "201903140102",
           laboraid: "F609",
+          seatId:"3"
         },
         {
           logo:  require("../../assets/image/userLogo/宫崎骏 (6).svg"),
@@ -54,12 +57,13 @@ export default {
           class: "软件工程1901",
           id: "201903140103",
           laboraid: "F608",
+          seatId: "4"
         },
       ],
       
       userNum: 50,
       labId: ["F609","F608"],
-      listHead: ["头像", "姓名", "专业班级", "学号", "所属实验室"],
+      listHead: ["头像", "姓名", "专业班级", "学号", "所属实验室","座位号"],
     };
   },
   
