@@ -1,6 +1,6 @@
 <template>
   <div>
-    f609
+    座位信息
   </div>
 </template>
 

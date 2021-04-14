@@ -37,7 +37,8 @@ export default {
 
   .main-content{
     width: 100%;
-    padding: 40px;
+    padding: 30px;
+    min-width: 1000px;
   }
 
 

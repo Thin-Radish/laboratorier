@@ -102,7 +102,6 @@ select {
 
 
 .search-input{
-  /* width: 180px; */
   width: 190px;
   height: 27px;
   display: flex;
@@ -121,18 +120,11 @@ select {
 }
 
 .clear{
-  margin-right: 20px;
+  margin-right: 10px;
   width: 15px;
   height: 27px;
-
-  /* border-radius: 0 4px 4px 0; */
-
-  /* text-align: center; */
-  /* line-height: 27px; */
-  /* font-family: cursive; */
   line-height: 30px;
-  /* background: rgb(206, 206, 199); */
-  /* color: rgb(71, 71, 70); */
+
 }
 
 
