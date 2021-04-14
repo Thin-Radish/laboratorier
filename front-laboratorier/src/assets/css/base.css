@@ -3,15 +3,14 @@
   margin: 0;
   list-style: none;
 }
-
-
-
 .content {
   display: flex;
 }
+/* .main-nav {
+  width: 215px;
+} */
 .main-content{
-
   width: 100%;
-  padding: 40px;
+  padding: 30px;
+  min-width: 720px;
 }
-

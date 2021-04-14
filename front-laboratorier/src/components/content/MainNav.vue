@@ -64,5 +64,4 @@ import NavItem from 'components/common/nav/NavItem.vue'
 <style scoped>
 
 
-
 </style>

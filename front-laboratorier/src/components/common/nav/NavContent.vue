@@ -121,7 +121,8 @@
 }
 .zoom-btn {
   height: 70px;
-  margin-top: 250px;
+  /* margin-top: 250px; */
+  margin-top: 200px;
   cursor: pointer;
   background: rgb(198, 226, 255);
 }
