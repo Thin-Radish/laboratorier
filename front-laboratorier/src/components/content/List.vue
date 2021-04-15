@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div class="list">
+    <div class="list-head" ref="head">
+      <div v-for="(item, index) in listHead" :key="index" >{{ item }}</div>
+    </div>
+  
     <ul class="list-content">
-      <li>
-        <div v-for="(item, index) in listHead" :key="index">{{ item }}</div>
-      </li>
       <li v-for="(item, index) in items" :key="index" class="list-item">
         <div v-for="(value, name, index) in item" :key="index">
-          <p v-if="value.split('.')[2]!='svg'">{{ value }}</p> 
+          <p v-if="value.split('.')[1]!='com/30'">{{ value }}</p> 
           <img v-else :src="value">
         </div>
       </li>
@@ -20,21 +21,54 @@ export default {
     listHead: Array,
     items: Array,
   },
+  mounted(){
+    this.$bus.$on("toggleNav",res=>{
+      if(res === "15px"){
+        this.$refs.head.style.width = "95%"
+      }else{
+        this.$refs.head.style.width = "80%"
+      }
+    })
+  }
 };
 </script>
 
 <style scoped>
-.list-content {
-  margin-top: 25px;
+.list{
+  width: 100%;
+  
 }
 
-.list-content li:first-child {
+.list-head {
+  width: 80%;
+  height: 40px;
+  min-width: 70%;
+  display: flex;
+
+  position: fixed;
+  margin-top: 10px;
+
+  background: white;
+  z-index: 1;
   font-weight: bolder;
 }
+.list-head > div{
+
+  width: 100%;
+  margin-right: 40px;
+  text-align: center;
+}
+
+.list-content {
+  
+  position: relative;
+  top: 50px;
+
+}
+
 
 li {
   display: flex;
-  /* margin-top: 10px; */
   height: 40px;
 }
 .list-item {

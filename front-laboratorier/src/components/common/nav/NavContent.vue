@@ -1,5 +1,5 @@
 <template>
-  <div :class="setDir" id="navContent">
+  <div :class="setDir" ref="navContent">
 
     <div :class="itemStyle" v-if="zoomStatus"><slot></slot></div>
 
@@ -37,11 +37,14 @@
       isShow(){
 
         if(this.zoomStatus){
-          document.querySelector("#navContent").style.width = "15px"
+          this.$refs.navContent.style.width = "15px"
+          this.$bus.$emit("toggleNav","15px");
         }else{
-          document.querySelector("#navContent").style.width = "215px"
+          this.$refs.navContent.style.width = "215px"
+          this.$bus.$emit("toggleNav","215px");
         }
         this.zoomStatus = !this.zoomStatus;
+        
         
       }
     },
@@ -77,15 +80,7 @@
 
   box-sizing: border-box; 
 }
-/* .nav-item-col>div{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    
 
-} */
 
 
 

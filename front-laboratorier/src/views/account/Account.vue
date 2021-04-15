@@ -5,8 +5,17 @@
 </template>
 
 <script>
+  import { getAccount } from 'network/reqData'
+
   export default {
-    
+
+    mounted(){
+      getAccount().then(res=>{
+        console.log(res);
+      })
+
+      
+    }
   }
 </script>
 
