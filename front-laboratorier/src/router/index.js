@@ -9,8 +9,8 @@ const Materials = () => import('views/materials/Materials')
 const Seat = () => import('views/seat/Seat')
 const UserInfo = () => import('views/userinfo/UserInfo')
 
-const Labf608 =()=> import('views/seat/childComps/seatContent/childComps/seatTab/Labf608')
-const Labf609 =()=> import('views/seat/childComps/seatContent/childComps/seatTab/Labf609')
+const Labf608 =()=> import('views/seat/childComps/seatTab/Labf608')
+const Labf609 =()=> import('views/seat/childComps/seatTab/Labf609')
 
 Vue.use(VueRouter)
 

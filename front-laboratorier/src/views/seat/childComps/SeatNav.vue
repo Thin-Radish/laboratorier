@@ -14,6 +14,9 @@
         <filter-search slot="nav-text" :isSelect="false"/>
       </nav-item>
     </nav-content>
+    
+    
+    
   </div>
 </template>
 
@@ -21,11 +24,12 @@
 import NavContent from 'components/common/nav/NavContent.vue'
 import NavItem from 'components/common/nav/NavItem.vue'
 import FilterSearch from 'components/common/search/FilterSearch.vue'
+
   export default {
     components: { 
       NavContent,
       NavItem,
-      FilterSearch
+      FilterSearch,
     },
   }
 </script>
