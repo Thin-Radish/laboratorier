@@ -43,7 +43,7 @@
   .text{
       width: 80px;
       height: 30px;
-      text-align: center;
+      /* text-align: center; */
       line-height: 30px;
       font-size: 18px;
       flex: 1;

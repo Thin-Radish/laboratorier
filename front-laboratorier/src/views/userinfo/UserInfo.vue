@@ -1,22 +1,29 @@
 <template>
   <div class="user-info">
-    <user-header :userNum="userNum" :laboratorys="laboratorys">
-      <user-search @searchVal="getSearchVal" :data = "users"></user-search>
+    <user-header :userNum="userNum" >
+      <filter-search @searchVal="getSearchVal" 
+                  :searchData = "users" 
+                  :isSelect="true"
+                  :selectData="labId"/>
     </user-header>
-    <user-list :listHead="listHead" :items="showUsers"></user-list>
+    <user-list :listHead="listHead" :items="showUsers" />
   </div>
 </template>
 
 <script>
 import UserHeader from "./childComps/UserHeader.vue";
-import userSearch from "./childComps/UserSearch.vue";
+import FilterSearch from "../../components/common/search/FilterSearch";
 import UserList from "../../components/content/List.vue";
 export default {
   name: "UserInfo",
-  components: { UserHeader, userSearch, UserList },
+  components: { 
+    UserHeader, 
+    FilterSearch, 
+    UserList 
+  },
+
   data() {
     return {
-      // searchVal:null,
       showUsers:null,
       users: [
         {
@@ -31,7 +38,7 @@ export default {
           name: "胡雯",
           class: "软件工程1901",
           id: "201903140101",
-          laboraid: "F609",
+          laboraid: "F608",
         },
         {
           logo:  require("../../assets/image/userLogo/宫崎骏 (3).svg"),
@@ -45,28 +52,27 @@ export default {
           name: "学生4",
           class: "软件工程1901",
           id: "201903140103",
-          laboraid: "F609",
+          laboraid: "F608",
         },
       ],
       
       userNum: 50,
-      laboratorys: [{ laborid: "F609" }, { laborid: "F608" }],
+      labId: ["F609","F608"],
       listHead: ["头像", "姓名", "专业班级", "学号", "所属实验室"],
     };
   },
+  
   methods:{
     getSearchVal(value){
       this.showUsers = value;
-
     },
 
   },
+
   created(){
     this.showUsers = this.users;
   },
-  updated(){
-    // console.log(this.searchVal);
-  }
+
 };
 </script>
 
