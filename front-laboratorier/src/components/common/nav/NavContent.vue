@@ -65,7 +65,7 @@
 .nav-content-col {
 
   width: 215px;
-  cursor: pointer;
+  /* cursor: pointer; */
   display: flex;
 
 }
@@ -83,14 +83,15 @@
     align-items: center;
     width: 100%;
     height: 80px;
-    
+    cursor: pointer;
     /* margin-left: 10px; */
 }
 
 
 
 .nav-content-row {
-  height: 80px;
+  /* height: 80px; */
+  height: 60px;
   width: 100%;
   border-bottom: 2px solid rgb(217, 236, 255);
   cursor: pointer;
@@ -104,11 +105,13 @@
 }
 
 .nav-item-row>div{
-  flex: 1;
+  /* flex: 1; */
     display: flex;
     align-items: center;
-    height: 80px;
-    width: 80px;
+    /* height: 80px; */
+    height: 60px;
+    /* width: 80px; */
+    width: 100px;
     z-index: 1
 }
 
