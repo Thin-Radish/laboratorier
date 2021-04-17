@@ -1,5 +1,5 @@
 <template>
-  <div class="acco-header">
+  <div class="acco-header" ref="head">
     <p>{{labName}}实验室账本</p>
 
     <div class="in-money">
@@ -21,7 +21,16 @@ export default {
             type:Object,
         },
         labName:String
-    }
+    },
+    mounted(){
+    this.$bus.$on("toggleNav",res=>{
+      if(res === "15px"){
+        this.$refs.head.style.width = "95%"
+      }else{
+        this.$refs.head.style.width = "85%"
+      }
+    })
+  }
 
 }
 </script>
@@ -31,7 +40,7 @@ export default {
     position: fixed;
     display: flex;
     top:119px;
-    width: 85%;
+     width: 85%;
     height: 70px;
     line-height: 70px;
     background-color: white;
