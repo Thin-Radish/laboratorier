@@ -1,6 +1,6 @@
 <template>
   <div class="acco-nav">
-    <nav-content styleNav="row"> 
+    <nav-content styleNav="row" class="acco-header"> 
         <nav-item v-for="item in labsId" :key="item" :path="'/account/' +  item">
             <div slot="nav-text">{{item}}</div>
         </nav-item>
@@ -28,6 +28,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 
 </style>

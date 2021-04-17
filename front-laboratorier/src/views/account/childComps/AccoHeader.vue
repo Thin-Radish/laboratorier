@@ -28,7 +28,15 @@ export default {
 
 <style scoped>
 .acco-header {
+    position: fixed;
     display: flex;
+    top:119px;
+    width: 85%;
+    height: 70px;
+    line-height: 70px;
+    background-color: white;
+    z-index: 999;
+    /* background-color: aquamarine; */
 }
 .acco-header > p{
     flex: 1
