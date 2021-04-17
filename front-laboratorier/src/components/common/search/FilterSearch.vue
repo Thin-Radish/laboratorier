@@ -103,7 +103,7 @@ select {
 
 .search-input{
   /* width: 180px; */
-  width: 190px;
+  width: 200px;
   height: 27px;
   display: flex;
   align-items: center;
@@ -116,13 +116,13 @@ select {
   padding-left: 10px;
   border: none;
   border-radius: 4px 0px 0px 4px;
-  width: 180px;
+  width: 170px;
   height: 27px;
 }
 
 .clear{
-  margin-right: 20px;
-  width: 15px;
+  /* margin-right: 20px; */
+  /* width: 15px; */
   height: 27px;
 
   /* border-radius: 0 4px 4px 0; */
