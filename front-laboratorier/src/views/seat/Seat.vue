@@ -45,6 +45,7 @@ import SeatInfo from "views/seat/childComps/SeatInfo"
   width: 70%;
   height: 100%;
 
+
   margin-right: 10px;
 }
 

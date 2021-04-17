@@ -4,12 +4,14 @@
       <div class="row first" >
         <div>
           <div class="blank">停用</div>
+
           <site :loca="siteLoca[1]" id="1" lab="f608"/>
           <site :loca="siteLoca[2]" id="2" lab="f608"/>
         </div>
       </div>
       <div class="row">
         <div>
+
           <site :loca="siteLoca[3]" id="3" lab="f608"/>
           <site :loca="siteLoca[4]" id="4" lab="f608"/>
           <site :loca="siteLoca[5]" id="5" lab="f608"/>
@@ -20,6 +22,7 @@
       </div>
       <div class="row">
         <div>
+
           <site :loca="siteLoca[9]"  id="9"  lab="f608"/>
           <site :loca="siteLoca[10]" id="10" lab="f608"/>
           <site :loca="siteLoca[11]" id="11" lab="f608"/>
@@ -44,6 +47,7 @@ export default {
   components: {
     Site,
   },
+
 
   data() {
     return {
@@ -85,7 +89,6 @@ export default {
         }
       }
     },
-
   },
 };
 </script>
@@ -94,16 +97,19 @@ export default {
 .lab-608 {
   width: 70%;
   height: 90%;
+
   margin-left: 17%;
   position: relative;
   display: flex;
 }
+
 
 .col {
   width: 35%;
   height: 95%;
   flex: 1;
   margin: -15px 30px;
+
 
   display: flex;
   flex-direction: column;
@@ -124,6 +130,7 @@ export default {
 
 
 
+
 .row > div {
   width: 90%;
 }
@@ -133,6 +140,7 @@ export default {
   height: 60px;
   background:#d9ecff;
   border: 1px solid #409eff;
+
 
   float: left;
 
@@ -153,15 +161,16 @@ export default {
   font-size: 10px;
   position: absolute;
 
+
   left: 12%;
   top: 5%;
 }
+
 
 .door{
   left: 12%;
   top: 5%;
 }
-
 
 .window1{
   left: 15%;
@@ -181,9 +190,11 @@ export default {
   font-size: 10px;
   position: absolute;
 
+
   top: 70%;
   right: 5%;
 }
+
 
 .style-water{
   height: 100px;
@@ -192,6 +203,7 @@ export default {
   line-height: 32px;
   font-size: 10px;
   position: absolute;
+
 
   top: 35%;
   left: 2%;

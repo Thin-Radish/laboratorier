@@ -68,7 +68,7 @@
 .nav-content-col {
 
   width: 215px;
-  cursor: pointer;
+  /* cursor: pointer; */
   display: flex;
 
 }
@@ -85,6 +85,7 @@
 
 
 .nav-content-row {
+
   height: 60px;
   /* width: 100%; */
   border-bottom: 2px solid rgb(217, 236, 255);
@@ -99,11 +100,10 @@
 }
 
 .nav-item-row>div{
-  flex: 1;
+  /* flex: 1; */
     display: flex;
     align-items: center;
     height: 60px;
-    /* width: 50px; */
     z-index: 1
 }
 

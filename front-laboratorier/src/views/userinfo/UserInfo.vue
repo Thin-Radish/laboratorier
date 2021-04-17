@@ -4,7 +4,7 @@
       <filter-search @searchVal="getSearchVal" 
                   :searchData = "users" 
                   :isSelect="true"
-                  :selectData="labId"/>
+                  :selectData="labsId"/>
     </user-header>
     <user-list :listHead="listHead" :items="showUsers"  class="list"/>
   </div>
@@ -15,6 +15,7 @@
 import UserHeader from "./childComps/UserHeader.vue";
 import FilterSearch from "../../components/common/search/FilterSearch";
 import UserList from "../../components/content/List.vue";
+
 
 import {getUserInfo} from 'network/reqData'
 
@@ -31,6 +32,7 @@ export default {
     return {
       showUsers:null,
       users:null,
+
       userNum: 50,
       labId: ["F609","F608"],
       listHead: ["头像", "姓名", "专业班级", "学号", "所属实验室","座位号"],
@@ -56,6 +58,13 @@ export default {
       
     }
 
+  },
+  mounted() {
+    getUserInfo().then(res => {
+       this.users = res;
+      this.showUsers = this.users;
+    }
+   )
   },
 
   mounted(){

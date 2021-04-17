@@ -25,6 +25,3 @@ export function getMaterials(){
   })
 } 
 
-
-
-

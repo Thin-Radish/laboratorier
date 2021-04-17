@@ -9,8 +9,13 @@ const Materials = () => import('views/materials/Materials')
 const Seat = () => import('views/seat/Seat')
 const UserInfo = () => import('views/userinfo/UserInfo')
 
+
+
+const AccoLab = () => import('views/account/childComps/AccoLab')
+
 const Labf608 =()=> import('views/seat/childComps/seatTab/Labf608')
 const Labf609 =()=> import('views/seat/childComps/seatTab/Labf609')
+
 
 Vue.use(VueRouter)
 
@@ -25,7 +30,17 @@ const routes = [
   },
   {
     path: '/account',
-    component: Account
+    component: Account,
+    children: [
+      {
+        path: ":labId",
+        component: AccoLab
+      },
+      {
+        path: "",
+        redirect: 'F608'
+      }
+    ]
   },
   {
     path: '/hygienetab',
@@ -52,13 +67,12 @@ const routes = [
         component:Labf608
       },
     ]
+
   },
   {
     path: '/userinfo',
     component:UserInfo
   },
-
-
 ]
 
 const router = new VueRouter({

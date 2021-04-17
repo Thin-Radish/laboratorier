@@ -1,4 +1,5 @@
 <template>
+
   <div class="lab-609" :getLoca="getData()">
     <div class="col">
       <div class="row">
@@ -13,6 +14,7 @@
       </div>
       <div class="row">
         <div>
+
           <site :loca="siteLoca[7]" id='7' lab="f609"/>
           <site :loca="siteLoca[8]" id='8' lab="f609"/>
           <site :loca="siteLoca[9]" id='9' lab="f609"/>
@@ -23,6 +25,7 @@
       </div>
       <div class="row end">
         <div>
+
           <site :loca="siteLoca[13]" id='13' lab="f609"/>
           <site :loca="siteLoca[14]" id='14' lab="f609"/>
           <site :loca="siteLoca[15]" id='15' lab="f609"/>
@@ -32,22 +35,26 @@
     <div class="col">
       <div class="row">
         <div>
+
           <site :loca="siteLoca[16]" id='16' lab="f609"/>
           <site :loca="siteLoca[17]" id='17' lab="f609"/>
           <site :loca="siteLoca[18]" id='18' lab="f609"/>
           <site :loca="siteLoca[19]" id='19' lab="f609"/>
           <site :loca="siteLoca[20]" id='20' lab="f609"/>
           <site :loca="siteLoca[21]" id='21' lab="f609"/>
+
         </div>
       </div>
       <div class="row">
         <div>
+
           <site :loca="siteLoca[22]" id='22' lab="f609"/>
           <site :loca="siteLoca[23]" id='23' lab="f609"/>
           <site :loca="siteLoca[24]" id='24' lab="f609"/>
           <site :loca="siteLoca[25]" id='25' lab="f609"/>
           <site :loca="siteLoca[26]" id='26' lab="f609"/>
           <site :loca="siteLoca[27]" id='27' lab="f609"/>
+
         </div>
       </div>
       <div class="row end">
@@ -70,6 +77,7 @@
 
 <script>
 
+
 import Site from "./Site.vue";
 import {getUserInfo} from 'network/reqData'
 
@@ -77,6 +85,7 @@ export default {
   components: {
     Site,
   },
+
 
   data() {
     return {
@@ -119,9 +128,8 @@ export default {
       }
     },
 
+
   },
-
-
 
 };
 </script>
@@ -133,6 +141,7 @@ export default {
   position: relative;
   display: flex;
 
+
   top: 25px;
 }
 
@@ -140,6 +149,7 @@ export default {
   width: 35%;
   height: 95%;
   flex: 1;
+
 
   margin: 10px 30px;
 
@@ -153,10 +163,12 @@ export default {
   width: 100%;
   height: 30%;
 
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 .row>div{
   width: 90%;
@@ -174,6 +186,7 @@ export default {
   font-size: 10px;
   position: absolute;
 }
+
 
 .window1{  
   top: 18%;
@@ -200,7 +213,6 @@ export default {
   letter-spacing:25px;
   font-size: 10px;
   position: absolute;
-
   left: 5%;
 }
 
@@ -212,6 +224,7 @@ export default {
   letter-spacing:12px;
   font-size: 10px;
   position: absolute;
+
 
   right: 20%;
 }
@@ -227,6 +240,7 @@ export default {
 
   border-left: 1px solid rgb(178, 211, 230);
   border-right: 1px solid rgb(178, 211, 230);
+
 
   position: absolute;
   left: 47%;

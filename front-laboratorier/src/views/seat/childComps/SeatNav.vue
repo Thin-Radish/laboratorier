@@ -30,6 +30,7 @@ import SeatSearch from './seatTab/SeatSearch.vue'
       NavContent,
       NavItem,
       SeatSearch,
+
     },
   }
 </script>

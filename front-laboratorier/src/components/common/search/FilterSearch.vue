@@ -102,6 +102,7 @@ select {
 
 
 .search-input{
+
   width: 190px;
   height: 27px;
   display: flex;
@@ -115,13 +116,14 @@ select {
   padding-left: 10px;
   border: none;
   border-radius: 4px 0px 0px 4px;
-  width: 180px;
+  width: 170px;
   height: 27px;
 }
 
 .clear{
   margin-right: 10px;
   width: 15px;
+
   height: 27px;
   line-height: 30px;
 

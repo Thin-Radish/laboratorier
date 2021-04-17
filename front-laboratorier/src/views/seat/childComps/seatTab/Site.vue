@@ -1,4 +1,5 @@
 <template>
+
   <div class="site" :class="{light:isActive}" @click="itemClick()">
     {{loca}}
   </div>
@@ -7,6 +8,7 @@
 <script>
   export default {
     props:{
+
       loca:{
         type:String,
         default:null,
@@ -62,6 +64,7 @@
   background:#d9ecff;
   border: 1px solid #409eff;
 
+
   float: left;
 
   line-height: 60px;
@@ -70,14 +73,17 @@
 }
 
 
+
 .site:hover{
   opacity: 0.8;
   cursor: pointer;
 }
+
 
 .light{
   background: #72afeb;
   opacity: 0.7;
 
 }
+
 </style>

@@ -1,16 +1,19 @@
 <template>
   <div>
+
     <ul class="infoTab">
       <li v-for="(item, index) in info" :key="index">
         <div v-if="isImage(item)">{{index|changeKey}}<img  :src="item"></div>
         <p v-else>{{ index|changeKey}}{{item}}</p>       
       </li>
     </ul>
+
   </div>
 </template>
 
 <script>
   export default {
+
     data(){
       return{
         info:null,
@@ -55,6 +58,7 @@
 </script>
 
 <style scoped>
+
 .infoTab{
   width: 100%;
   height: 100%;
@@ -74,5 +78,6 @@
 img{
   vertical-align:middle; 
 }
+
 
 </style>

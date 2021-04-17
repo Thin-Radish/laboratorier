@@ -7,6 +7,7 @@
     <ul class="list-content">
       <li v-for="(item, index) in items" :key="index" class="list-item">
         <div v-for="(value, name, index) in item" :key="index">
+
           <img v-if="isImage(value)" :src="value">
           <p v-else>{{ value }}</p>       
         </div>
@@ -21,6 +22,7 @@ export default {
     listHead: Array,
     items: Array,
   },
+
   methods:{
     isImage(value){
       let end = value.split('.')[1];
@@ -75,7 +77,6 @@ export default {
 
 }
 
-
 li {
   display: flex;
   height: 40px;
@@ -91,7 +92,6 @@ li div {
 .list-item p{
   line-height: 40px;
 }
-
 .list-item img {
     display: block;
     margin-top: 2px;

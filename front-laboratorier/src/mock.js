@@ -4,7 +4,9 @@ const Random = Mock.Random
 
 const userInfo = function () {
   let userList = []
+
   for (let i = 1; i <= 30; i++) {
+
     let template = Mock.mock({
       logo: Random.image(30),
       name: Random.cname(),
@@ -12,6 +14,7 @@ const userInfo = function () {
       id: Random.string("Number", 12),
       'laboraid|1': ["f608", "f609"],
       seatId: `${i}`
+
 
     })
     userList.push(template)
@@ -24,19 +27,26 @@ const account = function(){
   let tabList = [];
   for(let i=0; i<30; i++){
     let template = Mock.mock({
-      id:Random.increment(),
-      event:Random.ctitle(5,9),
-      amount:Random.float(-50,150,0,2),
-      date:'15'+Random.string("Number", 8),
-      remainSum: Random.float(-100,1000,0,2),
-      inTotal: Random.float(0,1000,0,2),
-      outTotal: Random.float(0,500,0,2),
-      nowTotal: Random.float(0,500,0,2),
+      // id:Random.increment(), 
+      // event:Random.ctitle(5,9),
+      // amount:Random.float(-50,150,0,2), //支出与收入
+      // date:'15'+Random.string("Number", 8),
+      // remainSum: Random.float(-100,1000,0,2), //剩余
+      type:Random.increment(), 
+      desc:Random.ctitle(5,9),
+      money:Random.float(-50,150,0,2), //支出与收入
+      ctime:'15'+Random.string("Number", 8),
+      remai_money: Random.float(-100,1000,0,2), //剩余
     })
     tabList.push(template)
   }
+  
+  // let labName = Mock.mock({'labName|1':["F608", "F609", "F607"]});
+  // let accountData = {labName: labName.labName,accout:tabList}
   return tabList
 }
+
+
 
 const hygiene = function(){
   let tabList = [];
@@ -109,9 +119,9 @@ date = formatDate(date,"yyyy/MM/dd")
 // console.log(date);
 
 
-Mock.mock('http://127.0.0.1:8080/userinfo', userInfo) ;
-Mock.mock('http://127.0.0.1:8080/account',account);
-Mock.mock('http://127.0.0.1:8080/hygiene',hygiene);
-Mock.mock('http://127.0.0.1:8080/materials',materials);
 
+Mock.mock('http://127.0.0.1:8081/userinfo', userInfo) ;
+Mock.mock('http://127.0.0.1:8081/account',account);
+Mock.mock('http://127.0.0.1:8081/hygiene',hygiene);
+Mock.mock('http://127.0.0.1:8081/materials',materials);
 
