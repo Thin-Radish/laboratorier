@@ -11,6 +11,7 @@
 </template>
 
 <script>
+
 import UserHeader from "./childComps/UserHeader.vue";
 import FilterSearch from "../../components/common/search/FilterSearch";
 import UserList from "../../components/content/List.vue";

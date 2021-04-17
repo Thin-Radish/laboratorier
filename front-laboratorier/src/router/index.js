@@ -9,7 +9,9 @@ const Materials = () => import('views/materials/Materials')
 const Seat = () => import('views/seat/Seat')
 const UserInfo = () => import('views/userinfo/UserInfo')
 
+
 const AccoLab = () => import('views/account/childComps/AccoLab')
+
 Vue.use(VueRouter)
 
 const routes = [
