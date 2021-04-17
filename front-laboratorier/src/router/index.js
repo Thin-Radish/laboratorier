@@ -8,6 +8,7 @@ const HygieneTab = () => import('views/hygienetab/HygieneTab')
 const Materials = () => import('views/materials/Materials')
 const Seat = () => import('views/seat/Seat')
 const UserInfo = () => import('views/userinfo/UserInfo')
+const TabList = () => import('views/hygienetab/childComps/TabList')
 
 
 
@@ -44,7 +45,21 @@ const routes = [
   },
   {
     path: '/hygienetab',
-    component: HygieneTab
+    component: HygieneTab,
+    children: [
+      {
+        path: 'hygieneF608',
+        component: TabList
+      },
+      {
+        path: 'hygieneF609',
+        component: TabList
+      },
+      {
+        path: '',
+        redirect: 'hygieneF608'
+      }
+    ]
   },
   {
     path: '/materials',

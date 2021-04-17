@@ -54,7 +54,9 @@
       width: 80px;
       height: 30px;
       /* text-align: center; */
+
       margin-left: 10px;
+
       line-height: 30px;
       font-size: 18px;
       flex: 1;
