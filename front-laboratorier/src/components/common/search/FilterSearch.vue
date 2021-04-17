@@ -14,7 +14,7 @@
     <label for="search">
       <div class="search-input">
         <input type="text" id="userSearch" placeholder="请输入关键词" v-model="inputVal"/>
-        <div class="clear" @click="itemClick">x</div>
+        <div class="clear" @click="itemClick"><img src="~assets/image/delect.svg"></div>
       </div>
     </label>
   </div>
@@ -85,7 +85,6 @@ export default {
 
 <style scoped>
 .serach-menu{
-
   display: flex;
 }
 
@@ -103,7 +102,8 @@ select {
 
 
 .search-input{
-  width: 180px;
+
+  width: 190px;
   height: 27px;
   display: flex;
   align-items: center;
@@ -113,34 +113,29 @@ select {
 
 .search-input input{
   outline: none;
-  
+  padding-left: 10px;
   border: none;
   border-radius: 4px 0px 0px 4px;
-  width: 180px;
+  width: 170px;
   height: 27px;
 }
 
 .clear{
-  
-  width: 13px;
+  margin-right: 10px;
+  width: 15px;
+
   height: 27px;
+  line-height: 30px;
 
-  border-radius: 0 4px 4px 0;
-
-  text-align: center;
-  line-height: 27px;
-  font-family: cursive;
-
-  background: rgb(206, 206, 199);
-  color: rgb(71, 71, 70);
 }
 
 
-.search-input:hover {
+.search-input:hover,.select-box select:hover {
   border: 1px solid rgb(64, 158, 255);
 }
 .clear:hover{
   opacity: 0.8;
+  cursor: pointer;
 }
-</style>
+
 </style>

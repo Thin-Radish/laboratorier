@@ -8,6 +8,8 @@
 </template>
 
 <script>
+
+
 import TabNav from "./childComps/TabNav.vue";
 
 export default {
@@ -16,8 +18,9 @@ export default {
     TabNav,
     
   },
- 
+
 };
+
 </script>
 
 <style scoped>

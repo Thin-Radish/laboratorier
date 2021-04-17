@@ -1,5 +1,5 @@
 <template>
-  <div :class="setDir" id="navContent">
+  <div :class="setDir" ref="navContent">
 
     <div :class="itemStyle" v-if="zoomStatus"><slot></slot></div>
 
@@ -37,11 +37,14 @@
       isShow(){
 
         if(this.zoomStatus){
-          document.querySelector("#navContent").style.width = "15px"
+          this.$refs.navContent.style.width = "15px"
+          this.$bus.$emit("toggleNav","15px");
         }else{
-          document.querySelector("#navContent").style.width = "215px"
+          this.$refs.navContent.style.width = "215px"
+          this.$bus.$emit("toggleNav","215px");
         }
         this.zoomStatus = !this.zoomStatus;
+        
         
       }
     },
@@ -65,7 +68,7 @@
 .nav-content-col {
 
   width: 215px;
-  cursor: pointer;
+  /* cursor: pointer; */
   display: flex;
 
 }
@@ -77,21 +80,14 @@
 
   box-sizing: border-box; 
 }
-.nav-item-col>div{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    
-    /* margin-left: 10px; */
-}
+
 
 
 
 .nav-content-row {
-  height: 80px;
-  width: 100%;
+
+  height: 60px;
+  /* width: 100%; */
   border-bottom: 2px solid rgb(217, 236, 255);
   cursor: pointer;
   
@@ -104,11 +100,10 @@
 }
 
 .nav-item-row>div{
-  flex: 1;
+  /* flex: 1; */
     display: flex;
     align-items: center;
-    height: 80px;
-    width: 80px;
+    height: 60px;
     z-index: 1
 }
 
@@ -121,7 +116,8 @@
 }
 .zoom-btn {
   height: 70px;
-  margin-top: 250px;
+  /* margin-top: 250px; */
+  margin-top: 200px;
   cursor: pointer;
   background: rgb(198, 226, 255);
 }
