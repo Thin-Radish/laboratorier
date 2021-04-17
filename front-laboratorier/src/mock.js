@@ -24,26 +24,31 @@ const userInfo = function () {
 }
 
 const account = function(){
-  let tabList = [];
-  for(let i=0; i<30; i++){
-    let template = Mock.mock({
-      // id:Random.increment(), 
-      // event:Random.ctitle(5,9),
-      // amount:Random.float(-50,150,0,2), //支出与收入
-      // date:'15'+Random.string("Number", 8),
-      // remainSum: Random.float(-100,1000,0,2), //剩余
-      type:Random.increment(), 
-      desc:Random.ctitle(5,9),
-      money:Random.float(-50,150,0,2), //支出与收入
-      ctime:'15'+Random.string("Number", 8),
-      remai_money: Random.float(-100,1000,0,2), //剩余
-    })
-    tabList.push(template)
+  let accouts = [];
+ 
+  for(let n=0; n<3;n++){
+    let accout = {tabList:[],labId:""};
+    for(let i=0; i<60; i++){
+      let template = Mock.mock({
+        // id:Random.increment(), 
+        // event:Random.ctitle(5,9),
+        // amount:Random.float(-50,150,0,2), //支出与收入
+        // date:'15'+Random.string("Number", 8),
+        // remainSum: Random.float(-100,1000,0,2), //剩余
+        type:Random.increment(), 
+        desc:Random.ctitle(5,9),
+        money:Random.float(-50,150,0,2), //支出与收入
+        ctime:'15'+Random.string("Number", 8),
+        remai_money: Random.float(-100,1000,0,2), //剩余
+      })
+      accout.tabList.push(template)
+    }
+    accouts.push(accout)
   }
-  
-  // let labName = Mock.mock({'labName|1':["F608", "F609", "F607"]});
-  // let accountData = {labName: labName.labName,accout:tabList}
-  return tabList
+  accouts[0].labId="F607"
+  accouts[1].labId="F608"
+  accouts[2].labId="F609"
+  return accouts
 }
 
 

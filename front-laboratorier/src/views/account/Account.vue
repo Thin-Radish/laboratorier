@@ -1,7 +1,7 @@
 <template>
   <div class="account">
 
-    <acco-nav></acco-nav>
+    <acco-nav class="acco-nav "></acco-nav>
     <router-view/>
     
   </div>
@@ -27,5 +27,13 @@ export default {
 </script>
 
 <style scoped>
+.acco-nav {
+  position: fixed;
+  width: 95%;
+  z-index: 999;
+  top:57px;
+
+  background-color: white;
+}
 
 </style>

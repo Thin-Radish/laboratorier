@@ -25,16 +25,18 @@ export default {
 
   methods:{
     isImage(value){
-      let end = value.split('.')[1];
+      if(typeof(value) === "string") {
+        let end = value.split('.')[1];
         if(end === 'com/30'){
           return true;
+        }
       }
     
     }
   },
   mounted(){
     this.$bus.$on("toggleNav",res=>{
-      if(res === "15px"){
+      if(res === "15px" ){
         this.$refs.head.style.width = "95%"
       }else{
         this.$refs.head.style.width = "80%"
