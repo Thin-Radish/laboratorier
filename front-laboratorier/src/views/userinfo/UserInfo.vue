@@ -16,7 +16,7 @@ import UserHeader from "./childComps/UserHeader.vue";
 import FilterSearch from "../../components/common/search/FilterSearch";
 import UserList from "../../components/content/List.vue";
 
-import {getUserInfo} from '../../network/reqData'
+import {getUserInfo} from 'network/reqData'
 
 
 export default {
@@ -41,15 +41,26 @@ export default {
     getSearchVal(value){
       this.showUsers = value;
     },
+    getData(){
+      let users = this.$store.state.userInfo;
+      if( users === null ){
+        getUserInfo().then(res => {
+            this.users = res;
+            this.$store.commit("commitUserInfo",this.users);
+            this.showUsers = this.$store.state.userInfo;
+        })
+      }
+      else{
+        this.showUsers = this.$store.state.userInfo;
+      }
+      
+    }
 
   },
 
   mounted(){
-    getUserInfo().then(res => {
-
-      this.users = res;
-      this.showUsers = this.users;
-    })
+    this.getData();
+    console.log(this.showUsers);
     
   },
 

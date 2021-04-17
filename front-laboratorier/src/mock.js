@@ -4,14 +4,14 @@ const Random = Mock.Random
 
 const userInfo = function () {
   let userList = []
-  for (let i = 0; i < 30; i++) {
+  for (let i = 1; i <= 30; i++) {
     let template = Mock.mock({
       logo: Random.image(30),
       name: Random.cname(),
       'class|1': ["软件工程1901", "软件工程1902", "网络工程1901", "网络工程1902"],
       id: Random.string("Number", 12),
       'laboraid|1': ["f608", "f609"],
-      seatId: Random.string("Number", 2),
+      seatId: `${i}`
 
     })
     userList.push(template)

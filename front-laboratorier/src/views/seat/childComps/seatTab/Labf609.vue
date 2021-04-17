@@ -1,60 +1,60 @@
 <template>
-  <div class="lab-609" :getLoca="userName()">
+  <div class="lab-609" :getLoca="getData()">
     <div class="col">
       <div class="row">
         <div>
-          <site :loca="siteLoca[1]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[3]" />
-          <site :loca="siteLoca[3]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[1]" />
+          <site :loca="siteLoca[1]" id='1' lab="f609"/>
+          <site :loca="siteLoca[2]" id='2' lab="f609"/>
+          <site :loca="siteLoca[3]" id='3' lab="f609"/>
+          <site :loca="siteLoca[4]" id='4' lab="f609"/>
+          <site :loca="siteLoca[5]" id='5' lab="f609"/>
+          <site :loca="siteLoca[6]" id='6' lab="f609"/>
         </div>
       </div>
       <div class="row">
         <div>
-          <site :loca="siteLoca[1]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[3]" />
-          <site :loca="siteLoca[3]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[1]" />
+          <site :loca="siteLoca[7]" id='7' lab="f609"/>
+          <site :loca="siteLoca[8]" id='8' lab="f609"/>
+          <site :loca="siteLoca[9]" id='9' lab="f609"/>
+          <site :loca="siteLoca[10]" id='10' lab="f609"/>
+          <site :loca="siteLoca[11]" id='11' lab="f609"/>
+          <site :loca="siteLoca[12]" id='12' lab="f609"/>
         </div>
       </div>
       <div class="row end">
         <div>
-          <site :loca="siteLoca[1]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[3]" />
+          <site :loca="siteLoca[13]" id='13' lab="f609"/>
+          <site :loca="siteLoca[14]" id='14' lab="f609"/>
+          <site :loca="siteLoca[15]" id='15' lab="f609"/>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="row">
         <div>
-          <site :loca="siteLoca[1]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[3]" />
-          <site :loca="siteLoca[3]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[1]" />
+          <site :loca="siteLoca[16]" id='16' lab="f609"/>
+          <site :loca="siteLoca[17]" id='17' lab="f609"/>
+          <site :loca="siteLoca[18]" id='18' lab="f609"/>
+          <site :loca="siteLoca[19]" id='19' lab="f609"/>
+          <site :loca="siteLoca[20]" id='20' lab="f609"/>
+          <site :loca="siteLoca[21]" id='21' lab="f609"/>
         </div>
       </div>
       <div class="row">
         <div>
-          <site :loca="siteLoca[1]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[3]" />
-          <site :loca="siteLoca[3]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[1]" />
+          <site :loca="siteLoca[22]" id='22' lab="f609"/>
+          <site :loca="siteLoca[23]" id='23' lab="f609"/>
+          <site :loca="siteLoca[24]" id='24' lab="f609"/>
+          <site :loca="siteLoca[25]" id='25' lab="f609"/>
+          <site :loca="siteLoca[26]" id='26' lab="f609"/>
+          <site :loca="siteLoca[27]" id='27' lab="f609"/>
         </div>
       </div>
       <div class="row end">
         <div>
-          <site :loca="siteLoca[1]" />
-          <site :loca="siteLoca[2]" />
-          <site :loca="siteLoca[3]" />
+          <site :loca="siteLoca[28]" id='28' lab="f609"/>
+          <site :loca="siteLoca[29]" id='29' lab="f609"/>
+          <site :loca="siteLoca[30]" id='30' lab="f609"/>
         </div>
       </div>
     </div>
@@ -69,7 +69,9 @@
 </template>
 
 <script>
+
 import Site from "./Site.vue";
+import {getUserInfo} from 'network/reqData'
 
 export default {
   components: {
@@ -78,46 +80,47 @@ export default {
 
   data() {
     return {
-      user: [
-        {
-          name: "谢旗峰",
-          laboraid: "f609",
-          seatId: 2,
-        },
-        {
-          name: "胡雯",
-          laboraid: "f609",
-          seatId: 3,
-        },
-        {
-          name: "邹昀",
-          laboraid: "f609",
-          seatId: 1,
-        },
-        {
-          name: "邹昀",
-          laboraid: "f608",
-          seatId: 4,
-        },
-      ],
+      users:null,
       siteLoca: [],
     };
   },
-  computed: {},
 
   methods: {
+
+    getData(){
+      let users = this.$store.state.userInfo;
+      if( users === null ){
+        getUserInfo().then(res => {
+            this.users = res;
+            this.showUsers = this.users;
+            this.$store.commit("commitUserInfo",this.users);
+
+            //注意异步操作
+            this.users = this.$store.state.userInfo;
+            this.userName();
+        })
+      }
+      else{
+        this.users = this.$store.state.userInfo;
+        this.userName();
+      }
+      
+    },
+
     userName() {
-      for (let index = 1; index < this.user.length; index++) {
-        for (let i in this.user) {
+      for (let index = 1; index < this.users.length; index++) {
+        for (let i in this.users) {
           if (
-            this.user[i].laboraid === "f609" &&this.user[i].seatId === index) {
-              this.siteLoca[index] = this.user[i].name;
+            this.users[i].laboraid === "f609" &&this.users[i].seatId === `${index}`) {
+              this.siteLoca[index] = this.users[i].name;
               break;
           }
         }
       }
     },
+
   },
+
 
 
 };

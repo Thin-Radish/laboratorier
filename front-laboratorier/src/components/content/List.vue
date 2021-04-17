@@ -7,8 +7,8 @@
     <ul class="list-content">
       <li v-for="(item, index) in items" :key="index" class="list-item">
         <div v-for="(value, name, index) in item" :key="index">
-          <p v-if="value.split('.')[1]!='com/30'">{{ value }}</p> 
-          <img v-else :src="value">
+          <img v-if="isImage(value)" :src="value">
+          <p v-else>{{ value }}</p>       
         </div>
       </li>
     </ul>
@@ -20,6 +20,15 @@ export default {
   props: {
     listHead: Array,
     items: Array,
+  },
+  methods:{
+    isImage(value){
+      let end = value.split('.')[1];
+        if(end === 'com/30'){
+          return true;
+      }
+    
+    }
   },
   mounted(){
     this.$bus.$on("toggleNav",res=>{
