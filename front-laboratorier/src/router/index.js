@@ -10,7 +10,7 @@ const Seat = () => import('views/seat/Seat')
 const UserInfo = () => import('views/userinfo/UserInfo')
 
 
-
+const MateriLab = () => import('views/materials/childComps/MateriLab')
 const AccoLab = () => import('views/account/childComps/AccoLab')
 
 const Labf608 =()=> import('views/seat/childComps/seatTab/Labf608')
@@ -48,7 +48,17 @@ const routes = [
   },
   {
     path: '/materials',
-    component:Materials
+    component:Materials,
+    children: [
+      {
+        path: ":labId",
+        component: MateriLab
+      },
+      {
+        path: "",
+        redirect: 'All'
+      }
+    ]
   },
   {
     path: '/seat',

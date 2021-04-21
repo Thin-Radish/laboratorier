@@ -1,21 +1,27 @@
 <template>
-  <div>
-    <div>物资</div>
+  <div class="materials">
+    <materi-nav/>
+    <materi-lab/>
   </div>
 </template>
 
 <script>
-  import {getAccount,getHygiene,getMaterials} from 'network/reqData'
-  export default {
-    
-    mounted(){
-      getMaterials().then(res=>{
-        console.log(res);
-      })
-    }
-  }
+import MateriNav from './childComps/MateriNav'
+import MateriLab from './childComps/MateriLab'
+export default {
+  components:{
+    MateriLab,
+    MateriNav
+  },
+}
 </script>
 
 <style scoped>
-
+.materi-nav {
+  position: fixed;
+  width: 95%;
+  z-index: 999;
+  top:57px;
+  background-color: white;
+}
 </style>
