@@ -63,8 +63,9 @@ export default {
   },
   mounted() {
     getAccount().then(res => {
-      console.log(res)
+      // console.log(res)
       this.accouts = res;
+      this.$store.commit("commitAccouts",this.accouts);
     })
   }
 };

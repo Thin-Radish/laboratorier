@@ -69,18 +69,19 @@ const hygiene = function(){
 
 
 const materials = function(){
-  let tabList = [];
-  for(let i=0; i<20; i++){
-    let template = Mock.mock({ 
-      'materId|1':["显示器","键盘","椅子","扫把","拖机"],
-      materCount:Random.integer(2,5),
-      freeCount:Random.integer(1,2),
-      'laboraid|1': ["f608", "f609"],
-      Note:Random.ctitle(10),
-    })
-    tabList.push(template)
+  let materis = [];
+  let arr = ["host","screen","keyboard","mouse","socket","key","cleaningTool"];
+  for(let n=0; n<21;n++){
+      let template = Mock.mock({
+        'labId|1': ["F608", "F609","F607"],
+        'equipment|1': arr,
+        all:Random.integer(10,25), 
+        using:Random.integer(5,10), 
+      })
+      materis.push(template)
   }
-  return tabList
+  
+  return materis
 }
 
 
